@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.xero.web.invoice.InvoiceBrowse"
+        focusComponent="invoicesTable"
+        lookupComponent="invoicesTable"
+        messagesPack="com.company.xero.web.invoice">
+    <dsContext>
+        <collectionDatasource id="invoicesDs"
+                              class="com.company.xero.entity.Invoice"
+                              view="_local">
+            <query>
+                <![CDATA[select e from xero$Invoice e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="invoicesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="invoicesTable"
+                datasource="invoicesDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="invoicesTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+                <action id="xeroAction"
+                        invoke="xeroActionHandler"
+                        
+                        icon="font-icon:DOWNLOAD"
+                        caption="Download Invoices from Xero"/>
+            </actions>
+            <columns>
+                <column id="invoiceDate"/>
+            </columns>
+            <rows datasource="invoicesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="invoicesTable.create"/>
+                <button id="editBtn"
+                        action="invoicesTable.edit"/>
+                <button id="removeBtn"
+                        action="invoicesTable.remove"/>
+                <button id="xeroBtn"
+                        action="invoicesTable.xeroAction"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>
