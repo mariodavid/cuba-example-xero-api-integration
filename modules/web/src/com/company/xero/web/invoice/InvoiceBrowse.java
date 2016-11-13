@@ -19,14 +19,11 @@ public class InvoiceBrowse extends AbstractLookup {
 
 
     public void xeroActionHandler() {
-        //Collection<Invoice> invoices = xeroService.getInvoicesFromXero("file:///Users/mario/Dropbox/Heffernan/keys/privatekey.pem");
-        Collection<Invoice> invoices = xeroService.getInvoicesFromXero();
 
+        boolean downloadSuccessful = xeroService.downloadInvoicesFromXero();
 
-        invoicesDs.clear();
-
-        for (Invoice invoice : invoices) {
-            invoicesDs.addItem(invoice);
+        if (downloadSuccessful) {
+            invoicesDs.refresh();
         }
 
     }

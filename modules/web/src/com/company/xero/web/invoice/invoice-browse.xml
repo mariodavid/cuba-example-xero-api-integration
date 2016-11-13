@@ -24,19 +24,25 @@
             <properties include=".*"/>
         </filter>
         <table id="invoicesTable"
+               multiselect="true"
                width="100%">
             <actions>
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
                 <action id="xeroAction"
-                        invoke="xeroActionHandler"
-                        
+                        caption="Download Invoices from Xero"
                         icon="font-icon:DOWNLOAD"
-                        caption="Download Invoices from Xero"/>
+                        invoke="xeroActionHandler"/>
             </actions>
             <columns>
                 <column id="invoiceDate"/>
+                <column id="invoiceNumber"/>
+                <column id="amountDue"/>
+                <column id="amountPaid"/>
+                <column id="total"/>
+                <column id="totalTax"/>
+                <column id="subTotal"/>
             </columns>
             <rows datasource="invoicesDs"/>
             <rowsCount/>

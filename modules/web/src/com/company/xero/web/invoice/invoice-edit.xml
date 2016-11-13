@@ -18,6 +18,12 @@
                     datasource="invoiceDs">
             <column width="250px">
                 <field id="invoiceDate"/>
+                <field id="invoiceNumber"/>
+                <field id="amountDue"/>
+                <field id="amountPaid"/>
+                <field id="total"/>
+                <field id="totalTax"/>
+                <field id="subTotal"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"

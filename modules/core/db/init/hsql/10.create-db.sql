@@ -10,6 +10,12 @@ create table XERO_INVOICE (
     DELETED_BY varchar(50),
     --
     INVOICE_DATE date,
+    INVOICE_NUMBER varchar(255),
+    AMOUNT_DUE decimal(19, 2),
+    AMOUNT_PAID decimal(19, 2),
+    TOTAL decimal(19, 2),
+    TOTAL_TAX decimal(19, 2),
+    SUB_TOTAL decimal(19, 2),
     --
     primary key (ID)
 )^
