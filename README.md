@@ -21,6 +21,11 @@ So, in this case, just open the build.gradle in your IDE or use CUBA studio to a
     
 The result can be seen in the [build.gradle](https://github.com/mariodavid/cuba-example-xero-api-integration/blob/master/build.gradle#L96) of the example.
 
+### Configure the API access
+
+In order to interact with the Xero API, a demo account and application has to be set up. The private key file (pem) has to be placed in the [conf directory](https://doc.cuba-platform.com/manual-6.3/conf_dir.html) of the CUBA application. 
+The filename (as well as the customerSecret and customerKey) has to be configured via the configuration interface (Menu: Administration > Application properties).  
+
 ### Using the API classes
 
 To use the API, i created the [XeroService](https://github.com/mariodavid/cuba-example-xero-api-integration/blob/master/modules/core/src/com/company/xero/service/XeroServiceBean.groovy), that is called from the UI button to import invoices from the API.
